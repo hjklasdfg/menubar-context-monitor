@@ -68,9 +68,17 @@ Two components:
 
 ## Customization
 
-- **Refresh interval**: Rename plugin — `30s` → `10s`, `1m`, `5m`
-- **Warning threshold**: Edit `WARN = 100000` in the plugin
-- **SSH target**: Set `OPENCLAW_SSH_TARGET` env var or edit `MINI=` in plugin
+Plugin file: `~/Library/Application Support/SwiftBar/Plugins/openclaw-agents.30s.sh`
+
+- **Refresh interval** — rename the file suffix, e.g. `30s` → `10s`, `1m`, `5m`:
+  ```bash
+  mv ~/Library/Application\ Support/SwiftBar/Plugins/openclaw-agents.{30s,10s}.sh
+  ```
+- **Warning threshold** — edit the plugin file, change `WARN_THRESHOLD = 100000` to your preferred token count
+- **SSH target** — edit `MINI="user@host"` in the plugin file, or set an env var:
+  ```bash
+  export OPENCLAW_SSH_TARGET="user@new-host"
+  ```
 
 ## Troubleshooting
 
@@ -136,9 +144,17 @@ bash scripts/install.sh --remote user@host
 
 ### 自定义
 
-- **刷新间隔** — 重命名插件文件后缀，`30s` → `10s`、`1m`、`5m`
-- **警告阈值** — 修改插件中的 `WARN = 100000`
-- **SSH 目标** — 设置环境变量 `OPENCLAW_SSH_TARGET` 或修改插件中的 `MINI=`
+插件文件位于 `~/Library/Application Support/SwiftBar/Plugins/openclaw-agents.30s.sh`
+
+- **刷新间隔** — 重命名文件后缀即可，例如把 `30s` 改为 `10s`、`1m` 或 `5m`：
+  ```bash
+  mv ~/Library/Application\ Support/SwiftBar/Plugins/openclaw-agents.{30s,10s}.sh
+  ```
+- **警告阈值** — 编辑插件文件，找到 `WARN_THRESHOLD = 100000`，改为你想要的 token 数
+- **SSH 目标** — 如果远程主机地址变了，编辑插件文件中的 `MINI="user@host"`，或设置环境变量：
+  ```bash
+  export OPENCLAW_SSH_TARGET="user@new-host"
+  ```
 
 ### 故障排查
 
